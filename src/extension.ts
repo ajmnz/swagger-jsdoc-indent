@@ -10,6 +10,14 @@ export function activate(context: vscode.ExtensionContext) {
       if (editor) {
         const selection = editor.selection;
         const text = editor.document.getText(selection);
+
+        if (!text) {
+          vscode.window.showErrorMessage(
+            "Please select a swagger-jsdoc comment"
+          );
+          return;
+        }
+
         const formatted = formatSwagger(text);
 
         if (!formatted) {

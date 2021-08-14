@@ -17,7 +17,7 @@
     "commands": [
       {
         "command": "swagger-indent.format",
-        "title": "Format jsDoc comment"
+        "title": "Format swagger-jsdoc comment"
       }
     ]
   },
