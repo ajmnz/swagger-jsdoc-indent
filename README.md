@@ -1,3 +1,3 @@
-# swagger-jsdoc Comment Formatter README
+### swagger-jsdoc Comment Formatter
 
 Write indentable OpenApi/Swagger jsDoc comments
