@@ -3,7 +3,7 @@ import { formatSwagger } from "./utils";
 
 export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
-    "swagger-indent.format",
+    "swagger-jsdoc-indent.format",
     () => {
       const editor = vscode.window.activeTextEditor;
 

@@ -1,22 +1,22 @@
 {
-  "name": "swagger-indent",
-  "displayName": "swagger-indent",
-  "description": "",
+  "name": "swagger-jsdoc-indent",
+  "displayName": "swagger-jsdoc comment formatter",
+  "description": "Write indentable OpenApi/Swagger jsDoc comments",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.59.0"
   },
   "categories": [
-    "Other"
+    "Formatters"
   ],
   "activationEvents": [
-    "onCommand:swagger-indent.format"
+    "onCommand:swagger-jsdoc-indent.format"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "swagger-indent.format",
+        "command": "swagger-jsdoc-indent.format",
         "title": "Format swagger-jsdoc comment"
       }
     ]
