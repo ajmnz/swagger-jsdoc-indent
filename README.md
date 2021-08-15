@@ -128,6 +128,7 @@ The extension will:
  *
  * More regular comments here
  */
+router.post("/auth/register", authMiddleware.validate, authController.register);
 ```
 
 Optionally run [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc/) to generate your spec.
