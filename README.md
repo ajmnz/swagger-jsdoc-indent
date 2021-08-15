@@ -19,7 +19,7 @@ and generate your spec.
  * or here
  * 
 but you'll
-  get it it here,
+  get it here,
   when there's no asterisk
     preceding the line
  */
