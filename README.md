@@ -80,6 +80,7 @@ Write your spec
  * 
  * More regular comments here
  */
+router.post("/auth/register", authMiddleware.validate, authController.register);
 ```
 
 Select your comment block, press `cmd + shift + P` (MacOS) or `ctrl + shift + P` (Windows) and search for `Format swagger-jsdoc comment`.
