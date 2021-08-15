@@ -3,7 +3,7 @@
   "displayName": "swagger-jsdoc comment formatter",
   "description": "Write indentable OpenApi/Swagger jsDoc comments",
   "publisher": "ajmnz",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "repository": {
     "url": "https://github.com/ajmnz/swagger-jsdoc-indent"
   },
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
-    "package": "yarn clean && tsc -p",
+    "package": "yarn clean && webpack --devtool hidden-source-map --progress",
     "clean": "rimraf -rf ./dist",
     "watch": "tsc -w"
   },
@@ -43,9 +43,12 @@
     "eslint": "^7.27.0",
     "glob": "^7.1.7",
     "mocha": "^8.4.0",
+    "ts-loader": "^9.2.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.3.2",
-    "vscode-test": "^1.5.2"
+    "vscode-test": "^1.5.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
   },
   "dependencies": {
     "prettier": "^2.3.2"

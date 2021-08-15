@@ -3,16 +3,23 @@
 {
   "version": "2.0.0",
   "tasks": [
+    // {
+    //   "type": "npm",
+    //   "script": "watch",
+    //   "isBackground": true,
+    //   "presentation": {
+    //     "reveal": "never"
+    //   },
+    //   "problemMatcher": [],
+    //   "label": "npm: watch",
+    //   "detail": "tsc -w"
+    // },
     {
       "type": "npm",
-      "script": "watch",
-      "isBackground": true,
-      "presentation": {
-        "reveal": "never"
-      },
+      "script": "package",
       "problemMatcher": [],
-      "label": "npm: watch",
-      "detail": "tsc -w"
+      "label": "npm: package",
+      "detail": "yarn clean && tsc"
     }
   ]
 }
