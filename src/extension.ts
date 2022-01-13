@@ -96,7 +96,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         if (!text) {
           vscode.window.showErrorMessage(
-            "Please select a swagger-jsdoc comment"
+            "Please place your cursor within a swagger-jsdoc comment"
           );
           return;
         }
