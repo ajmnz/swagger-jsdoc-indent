@@ -57,3 +57,51 @@ export const formatSwagger = (comment: string) => {
     console.log(error);
   }
 };
+
+export const unFormatSwagger = (comment: string) => {
+  /**
+   * Strip swagger spec.
+   *
+   * Captures all text between @swagger | @openapi and  `*\/`
+   * which is the swagger spec.
+   */
+  let match = comment.match(
+    / \* (?<tag>@swagger\s|@openapi\s)(?<spec>[\s\S]+?)(?=^.*\*\/+)/m
+  );
+
+  if (
+    !match ||
+    !match.groups ||
+    !("tag" in match.groups) ||
+    !("spec" in match.groups)
+  ) {
+    return;
+  }
+
+  let { spec, tag }: { tag: string; spec: string } = match.groups as {
+    tag: string;
+    spec: string;
+  };
+
+  try {
+    spec = spec
+      .split("\n")
+      .map((e) => {
+        let match=e.match(/ \* (.*)$/);
+        if(!match) { 
+          return e
+        }
+        else {
+          return match[1];
+        }
+      })
+      .join("\n");
+
+    spec = tag + spec;
+
+    return comment.replace(match[0], spec);
+  } catch (error) {
+    vscode.window.showErrorMessage(error.message);
+    console.log(error);
+  }
+};
