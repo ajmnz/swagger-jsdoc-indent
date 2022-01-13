@@ -2,6 +2,10 @@
 <h1 align="center">Swagger jsDoc indent</h1>
 <p align="center">Write indentable OpenApi/Swagger jsDoc comments.</p>
 
+---
+
+# Table of contents
+- [Table of contents](#table-of-contents)
 - [Description](#description)
 - [Usage](#usage)
     - [Installation](#installation)

@@ -3,7 +3,7 @@
   "displayName": "swagger-jsdoc Comment Formatter",
   "description": "Write indentable OpenApi/Swagger jsDoc comments",
   "publisher": "ajmnz",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "repository": {
     "url": "https://github.com/ajmnz/swagger-jsdoc-indent"
   },
