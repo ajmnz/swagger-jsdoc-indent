@@ -46,10 +46,10 @@ export const formatSwagger = (comment: string) => {
     // Indent each line and add the asterisk
     spec = spec
       .split("\n")
-      .map((e) => tagIndentation + " * " + e)
+      .map((e) => tagIndentation + " *" + `${e ? " " + e : e}`)
       .join("\n");
 
-    spec = " * " + tag + spec + "\n" + " ";
+    spec = " * " + tag + spec + "\n";
 
     return comment.replace(match[0], spec);
   } catch (error) {
@@ -87,11 +87,10 @@ export const unFormatSwagger = (comment: string) => {
     spec = spec
       .split("\n")
       .map((e) => {
-        let match=e.match(/ \* (.*)$/);
-        if(!match) { 
-          return e
-        }
-        else {
+        let match = e.match(/ \* (.*)$/);
+        if (!match) {
+          return e;
+        } else {
           return match[1];
         }
       })
