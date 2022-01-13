@@ -46,7 +46,8 @@ export const formatSwagger = (comment: string) => {
     // Indent each line and add the asterisk
     spec = spec
       .split("\n")
-      .map((e) => tagIndentation + " *" + `${e ? " " + e : e}`)
+      .slice(0, -1)
+      .map((e) => tagIndentation + " * " + e)
       .join("\n");
 
     spec = " * " + tag + spec + "\n";
