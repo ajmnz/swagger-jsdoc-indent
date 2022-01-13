@@ -1,8 +1,15 @@
-# swagger-jsdoc-indent
 
-Write indentable OpenApi/Swagger jsDoc comments.
+<h1 align="center">Swagger jsDoc indent</h1>
+<p align="center">Write indentable OpenApi/Swagger jsDoc comments.</p>
 
-### Description
+- [Description](#description)
+- [Usage](#usage)
+    - [Installation](#installation)
+    - [Formatting comment blocks](#formatting-comment-blocks)
+      - [Example](#example)
+    - [Unformatting](#unformatting)
+- [License](#license)
+# Description
 
 This VSCode extension targets [this](https://stackoverflow.com/questions/58186804/vscode-indent-in-swagger-jsdoc) issue on StackOverflow. Basically,
 when writing your API spec in YAML with [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc/), it is impossible to get automatic indentation and formatting
@@ -25,23 +32,23 @@ but you'll
  */
 ```
 
-### Usage
+# Usage
 
-##### Installation
+### Installation
 
 Install the extension from the [installation page](https://marketplace.visualstudio.com/items?itemName=ajmnz.swagger-jsdoc-indent).
 
-##### Writing comment blocks
+### Formatting comment blocks
 
 For the extension to correctly parse your comment block, it should follow the following guidelines:
 
 - The spec has to start with either `@swagger` or `@openapi`
-- It should be aligned/indented with the `/**`
-- No line (of the spec) should start with an asterisk (`*`)
-- It can contain regular comments preceded by an asterisk before and after the spec
-- **Before running the extension you must select the comment block**
+- The comment should start with `/**`
+- No line (of the spec only) should start with an asterisk (`*`)
+- It can contain regular comments preceded by an asterisk before the spec
+- **Before running the extension you must place your cursor within the comment block**
 
-##### Example
+#### Example
 
 Write your spec
 
@@ -77,13 +84,11 @@ Write your spec
                 format: password
                 minLength: 8
                 description: At least one number and one letter
- * 
- * More regular comments here
  */
 router.post("/auth/register", authMiddleware.validate, authController.register);
 ```
 
-Select your comment block, press `cmd + shift + P` (MacOS) or `ctrl + shift + P` (Windows) and search for `Format swagger-jsdoc comment`.
+Place your cursor within the comment block, press `cmd + shift + P` (MacOS) or `ctrl + shift + P` (Windows) and search for `Swagger jsDoc: Format spec`.
 
 The extension will:
 
@@ -136,6 +141,16 @@ Optionally run [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc/) to gene
 ```sh
 $ yarn swagger-jsdoc -d docs/api/definition.yml src/api/routes/v1/**.ts -o docs/api/specification.yml
 ```
+
+### Unformatting
+
+It is possible to undo the formatting for easy editing (thanks @doctorfred).
+Works the same as formatting, but instead removes the asterisks so you can edit the spec while being able
+to indent it.
+
+Place your cursor within the comment block, press `cmd + shift + P` (MacOS) or `ctrl + shift + P` (Windows) and search for `Swagger jsDoc: Unformat spec`.
+
+Then you can just [format](#formatting-comment-blocks) it again.
 
 # License
 
