@@ -52,7 +52,7 @@ export const formatSwagger = (comment: string) => {
     spec = " * " + tag + spec + "\n";
 
     return comment.replace(match[0], spec);
-  } catch (error) {
+  } catch (error: any) {
     vscode.window.showErrorMessage(error.message);
     console.log(error);
   }
@@ -99,7 +99,7 @@ export const unFormatSwagger = (comment: string) => {
     spec = tag + spec;
 
     return comment.replace(match[0], spec);
-  } catch (error) {
+  } catch (error: any) {
     vscode.window.showErrorMessage(error.message);
     console.log(error);
   }
