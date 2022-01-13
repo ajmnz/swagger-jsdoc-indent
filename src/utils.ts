@@ -9,7 +9,7 @@ export const formatSwagger = (comment: string) => {
    * which is the swagger spec.
    */
   let match = comment.match(
-    /(?<tag>@swagger\s|@openapi\s)(?<spec>[\s\S]+?)(?=^.*\*\/*)/m
+    /(?<tag>@swagger\s|@openapi\s)(?<spec>[\s\S]+?)(?=^.*\*\/+)/m
   );
 
   if (
