@@ -15,7 +15,8 @@
     "Formatters"
   ],
   "activationEvents": [
-    "onCommand:swagger-jsdoc-indent.format"
+    "onCommand:swagger-jsdoc-indent.format",
+    "onCommand:swagger-jsdoc-indent.unformat"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -23,6 +24,10 @@
       {
         "command": "swagger-jsdoc-indent.format",
         "title": "Format swagger-jsdoc comment"
+      },
+      {
+        "command": "swagger-jsdoc-indent.unformat",
+        "title": "Unformat swagger-jsdoc comment"
       }
     ]
   },
